@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Flash Document</title>
+  <style>
+    
+      body {
+       background-color: rgb(81, 126, 141);
+        text-align: center;
+      }
+      
+      .lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+  </style>
+ 
+</head>
+  
+<body>
+  <H1> Please Wait </H1>
+  "<img src="C:\Users\sando\Documents\MiCarpeta\Contenedor Pythyon\Prueba Html css\wallhaven-y8vlyk.jpg" width="300" height="300">" width="300" height="300">
+  <script>
+    const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbyyl7Yv_wWzz-JCfgCX14kdpGsdK8D3zxDkdrv-VdWCs6VkivhmjmMCH8F6OW8NcBXjCA/exec";
+    
+    var url = document.location.href;
+    var k = url.substr(url.lastIndexOf("k=")+2);
+    
+    if(k){
+      fetch(AS_URL_BASE+'?k='+k)
+      .then(r => r.text())
+      .then((r) => {
+        console.log(r);
+        //document.write(r);
+        if(r){
+          document.location.replace(r);
+        }
+      })
+      .catch(err => console.log(err))
+    }
+
+  </script>
+  
+  <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+ 
+  
+</body>
+</html>
